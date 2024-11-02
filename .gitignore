@@ -1,0 +1,27 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+
+# Environment configuration files
+.env
+
+# Cache and logs
+*.log
+.cache/
+.pytest_cache/
+
+# Distribution files
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Editor settings (optional)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

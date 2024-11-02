@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITHUB</title>
+</head>
+<body>
+    <h1>Github Repositories</h1>
+    <form action="/repos" method="get">
+        <label for="username">Github Username: </label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Get Repositories</button>
+    </form>
+    <div id="repo-results">
+        {% if repos %}
+        <ul>
+            {% for repo in repos %}
+            <li>
+                <h2><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h2>
+                <p><strong>Description: </strong>{{repo.description if repo.description else "No description available"}}</p>
+                <p><strong>Language: </strong>{{repo.language if repo.language else "NA"}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No Repositories present</p>
+        {% endif %}
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
